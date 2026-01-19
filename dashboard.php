@@ -6,6 +6,10 @@ require_login();
 
 $user = current_user();
 
+$message = $_SESSION['dashboard_message'] ?? null;
+$message_type = $_SESSION['dashboard_message_type'] ?? 'success';
+unset($_SESSION['dashboard_message'], $_SESSION['dashboard_message_type']);
+
 $issues = [];
 
 if ($pdo) {
@@ -69,6 +73,11 @@ $stats = [
     </header>
 
     <main class="dashboard">
+        <?php if ($message): ?>
+            <div class="alert <?php echo $message_type === 'error' ? 'alert-error' : 'alert-success'; ?>">
+                <?php echo htmlspecialchars($message); ?>
+            </div>
+        <?php endif; ?>
         <section class="stats">
             <div class="stat-card">
                 <div class="stat-icon">📦</div>
@@ -99,7 +108,7 @@ $stats = [
                 <button class="pill">Pending</button>
                 <button class="pill">Returned</button>
             </div>
-            <button class="primary">Print</button>
+            <button class="primary" type="button" onclick="window.print()">Print</button>
         </section>
 
         <?php if ($user['role'] === 'admin'): ?>
@@ -117,6 +126,39 @@ $stats = [
                     <input type="text" placeholder="Serial No">
                     <button type="button">Issue</button>
                 </form>
+            </section>
+        <?php endif; ?>
+
+        <section class="card">
+            <div class="card-title">
+                <h3>Change Password</h3>
+            </div>
+            <form class="issue-form" method="post" action="change_password.php">
+                <input type="password" name="current_password" placeholder="Current Password" required>
+                <input type="password" name="new_password" placeholder="New Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+                <button type="submit">Update Password</button>
+            </form>
+        </section>
+
+        <?php if ($user['role'] === 'admin'): ?>
+            <section class="card">
+                <div class="card-title">
+                    <h3>Create User Account</h3>
+                </div>
+                <form class="issue-form" method="post" action="register_user.php">
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Temporary Password" required>
+                    <select name="role" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Create Account</button>
+                </form>
+                <?php if (!$pdo): ?>
+                    <p class="muted">Database connection required to create new accounts.</p>
+                <?php endif; ?>
             </section>
         <?php endif; ?>
 

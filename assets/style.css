@@ -190,6 +190,7 @@ a {
 }
 
 .issue-form input,
+.issue-form select,
 .search-form input,
 .auth-form input {
     padding: 10px 12px;
@@ -324,6 +325,21 @@ tbody td {
     background: rgba(239, 68, 68, 0.12);
     color: #b91c1c;
     font-weight: 600;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.12);
+    color: #b91c1c;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
 }
 
 .auth-hint {
