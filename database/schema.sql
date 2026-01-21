@@ -57,4 +57,4 @@ CREATE TABLE issue_return_log (
 
 INSERT INTO users (name, email, password, role)
 VALUES
-('Admin User', 'admin@tvchannel.local', '$2y$10$kjB5B.5dB85Xkr2vK9C3xu5Xz4dIv6XGZ9mR9yHVZJPumFxH3uD.u', 'admin');
+('Admin User', 'admin@tvchannel.local', '$2y$12$Hn3dz4jWAacYkifTTzlpK.usrjLyt9kHToeA28oOowUvwI6PLVoVi', 'admin');
