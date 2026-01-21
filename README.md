@@ -84,12 +84,6 @@ README.md
      php -S localhost:8000 -t public
      ```
 
-4. **Login করুন**
-   - Admin: `admin@tvchannel.local`
-   - Password: `password123`
-
----
-
 # Security Highlights
 - **Prepared Statement** (SQL Injection Protection)
 - **Password Hashing** (bcrypt)
