@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/csrf.php';
 require_login();
-require_role(['admin', 'store']);
 csrf_validate();
 
 $equipmentId = (int)($_POST['equipment_id'] ?? 0);

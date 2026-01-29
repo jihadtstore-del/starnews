@@ -17,7 +17,7 @@ require_once __DIR__ . '/csrf.php';
     <a class="navbar-brand" href="<?= BASE_URL ?>/dashboard.php"><?= htmlspecialchars(APP_NAME) ?></a>
     <div class="ms-auto text-white">
         <?php if (current_user()): ?>
-            <span class="me-3"><?= htmlspecialchars(current_user()['name']) ?> (<?= htmlspecialchars(current_user()['role']) ?>)</span>
+            <span class="me-3"><?= htmlspecialchars(current_user()['name']) ?></span>
             <a class="btn btn-sm btn-outline-light" href="<?= BASE_URL ?>/logout.php">Logout</a>
         <?php endif; ?>
     </div>

@@ -15,6 +15,5 @@
      - Password: `password123` (update by changing the hash in `database/schema.sql` if desired).
 
 ## Notes
-- Use the admin section for managing users, equipment, and locations.
-- Store managers and admins can add stock in/out and mark returns.
-- Regular users can view assigned issues.
+- Logged-in users can add stock in/out and mark returns.
+- Equipment and locations are managed directly in the database seed or via SQL updates.
