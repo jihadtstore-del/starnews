@@ -1,0 +1,69 @@
+body {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.login-card {
+    width: 360px;
+}
+
+.sidebar {
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar .list-group-item {
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+
+.sidebar .list-group-item.active {
+    background-color: #0d6efd;
+}
+
+.equipment-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.summary-card strong {
+    font-size: 1.2rem;
+}
+
+.sticky-summary {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.sticky-form {
+    position: sticky;
+    top: 110px;
+    z-index: 1020;
+}
+
+table thead {
+    position: sticky;
+    top: 240px;
+    z-index: 1010;
+}
+
+.table-responsive {
+    max-height: 420px;
+}
+
+.badge-status {
+    font-size: 0.75rem;
+}
+
+.pagination .page-item .page-link {
+    border-radius: 6px;
+}
